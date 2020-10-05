@@ -187,8 +187,13 @@ class MyLocation : AppCompatActivity(), OnMapReadyCallback  {
         locationSource = FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
 
     }
+    
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        src_edit.visibility = View.VISIBLE
 
-
+        return super.onCreateOptionsMenu(menu)
+    }
 
     fun getCurrentAddress(latitude: Double, longitude: Double): String {
 
